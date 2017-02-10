@@ -16,9 +16,25 @@
                 <label for="address">Address:</label>
                 <input id="address" class="form-control" type="text" name="address">
                 <button type="submit" name="btn-success">Add Address</button>
-
-
             </form>
+            <br>
+            <br>
+            {% if new_address_display is not empty %}
+                <h2>Your Addresses are:</h2>
+            <ul>
+                {% for new_address_display in new_address_displays %}
+                    <li>Name: {{ new_address_displays.getName }}</li>
+                    <li>Phone: {{ new_address_displays.getPhone}}
+                    <li>Address: {{ new_address_displays.getAddress }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="/">
+               <button type="submit" name="button">Ad Another</button>
+            </form>
+            <br>
+            <form action="/deleteAll" method="post">
+            <button type="submit" name="button">Delete All</button>
         </div>
     </div>
 </body>

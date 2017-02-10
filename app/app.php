@@ -21,7 +21,7 @@
 
     $app->get("/" , function() use ($app)
     {
-        return $app["twig"]->render("create_new_address.html.twig" , array("create_address"=>Book::getAll()));
+        return $app["twig"]->render("create_contact.html.twig" , array("create_address"=>Book::getAll()));
     });
 
     $app->post("/create_new" , function() use ($app)
@@ -35,7 +35,7 @@
     $app->post("/deleteAll" , function() use ($app)
     {
         Book::deleteAll();
-        return $app["twig"]->render("create_new_address.html.twig" , array("create_address" => Book::getAll()));
+        return $app["twig"]->render("delete_contacts.html.twig" , array("create_address" => Book::getAll()));
     });
 
 
