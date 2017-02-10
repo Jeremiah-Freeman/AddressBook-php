@@ -26,9 +26,9 @@
 
     $app->post("/create_new" , function() use ($app)
     {
-        $new_created_address = new Book($_POST["name"] , $_POST["address"] , $_POST["phone"]);
+        $new_created_address = new Book($_POST["name"] , $_POST["phone"] , $_POST["address"]);
         $new_created_address -> save();
-        return $app["twig"]->render("display_created_address.html.twig" , array("new_address_display" => $new_created_address));
+        return $app["twig"]->render("create_contact.html.twig" , array("new_address_display" => $new_created_address));
 // dump($new_created_address);
     });
 
