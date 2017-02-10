@@ -4,7 +4,7 @@
         private $name;
         private $address;
 
-        function __construct($name , $artist)
+        function __construct($name , $address)
         {
             $this->name = $name;
             $this->address = $address;
@@ -32,24 +32,21 @@
         }
 
 
-        function save() {
+        function save()
+        {
             array_push($_SESSION["list_of_address"] , $this);
         }
 
-        function getAll()
+        static function getAll()
         {
             return $_SESSION["list_of_address"];
         }
-    }
+
+        static function deleteAll()
+        {
+            $_SESSION["list_of_address"] = array();
+        }
 
 
-
-
-
-
-
-
-
-
-
+}
 ?>

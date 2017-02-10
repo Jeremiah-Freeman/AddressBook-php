@@ -1,12 +1,24 @@
-<!DOCTYPE html>
+
 <html>
 <head>
         <title>Address Display</title>
 </head>
 <body>
-    <h2>Your Addresses are:</h2>
-    <ul>Name: {{new_address_dispalay.getName}}</ul>
-    <ul>Name: {{new_address_dispalay.getAddress}}</ul>
 
+    {% if new_address_display is empty %}
+        <h2>Your Addresses are:</h2>
+        <ul>
+            {% for new_address_display in new_address_displays %}
+            <li>Name: {{new_created_address.getName}}</li>
+            <li>Address: {{new_created_address.getAddress}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form action="/">
+        <button type="submit" name="button">Ad Another</button>
+    </form>
+    <br>
+    <form action="/deleteAll" method="post">
+    <button type="submit" name="button">Delete All</button>
 </body>
 </html>
