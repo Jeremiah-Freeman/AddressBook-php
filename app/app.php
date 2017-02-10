@@ -7,7 +7,8 @@
 
     session_start();
 
-    if(empty($_SESSION["list_of_address"])) {
+    if(empty($_SESSION["list_of_address"]))
+    {
         $_SESSION["list_of_address"] = array();
     }
 
@@ -17,7 +18,7 @@
 
     $app["debug"] = true;
 
-    
+
 
 
 
