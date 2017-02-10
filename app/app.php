@@ -7,9 +7,9 @@
 
     session_start();
 
-    if(empty($_SESSION["list_of_address"]))
+    if(empty($_SESSION['list_of_contacts']))
     {
-        $_SESSION["list_of_address"] = array();
+        $_SESSION['list_of_contacts'] = array();
     }
 
     $app = new Silex\Application();
@@ -26,9 +26,10 @@
 
     $app->post("/create_new" , function() use ($app)
     {
-        $new_created_address = new Book($_POST["name"] , $_POST["address"]);
+        $new_created_address = new Book($_POST["name"] , $_POST["address"] , $_POST["phone"]);
         $new_created_address -> save();
         return $app["twig"]->render("display_created_address.html.twig" , array("new_address_display" => $new_created_address));
+// dump($new_created_address);
     });
 
     $app->post("/deleteAll" , function() use ($app)

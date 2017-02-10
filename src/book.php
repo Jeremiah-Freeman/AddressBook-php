@@ -2,6 +2,7 @@
     class Book
     {
         private $name;
+        private $phone;
         private $address;
 
         function __construct($name , $address)
@@ -20,6 +21,10 @@
         {
             return $this->address;
         }
+        function getPhone()
+        {
+            return $this->phone;
+        }
 
         // set functions
         function setName($new_name)
@@ -30,21 +35,25 @@
         {
             $this->address = $new_address;
         }
+        function setPhone($new_phone)
+        {
+            $this->phone = $new_phone;
+        }
 
 
         function save()
         {
-            array_push($_SESSION["list_of_address"] , $this);
+            array_push($_SESSION['list_of_contacts'] , $this);
         }
 
         static function getAll()
         {
-            return $_SESSION["list_of_address"];
+            return $_SESSION['list_of_contacts'];
         }
 
         static function deleteAll()
         {
-            $_SESSION["list_of_address"] = array();
+            $_SESSION['list_of_contacts'] = array();
         }
 
 

@@ -4,16 +4,20 @@
         <title>Address Display</title>
 </head>
 <body>
+    <h2>Your Addresses are:</h2>
 
-    {% if new_address_display is empty %}
-        <h2>Your Addresses are:</h2>
-        <ul>
-            {% for new_address_display in new_address_displays %}
-            <li>Name: {{new_created_address.getName}}</li>
-            <li>Address: {{new_created_address.getAddress}}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+       <p>Here are all your tasks:</p>
+       <ul>
+           {% for new_address_display in new_address_display %}
+           <li>Name: {{ new_address_display.getName }}</li>
+           <li>Address: {{ new_address_display.getAddress }}</li>
+           {% endfor %}
+       </ul>
+<!-- {{dump(new_address_display)}} -->
+
+
+
+
     <form action="/">
         <button type="submit" name="button">Ad Another</button>
     </form>
