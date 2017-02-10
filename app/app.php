@@ -19,7 +19,16 @@
     $app["debug"] = true;
 
 
+    $app->get("/" , function() use ($app) {
+        return $app["twig"]->render("create_new_address.html.twig" , array("create_address"=>Book::getAll()));
+    });
 
+    $app->post("/create_new" , function() use ($app) {
+        $new_created_address = new Book($_POST["name"] , $_POST["address"]);
+        return $app["twig"]->render("display_created_address.html.twig" , array("new_address_dispalay" => $new_created_address));
+    });
+
+    
 
 
 
