@@ -5,7 +5,7 @@
         private $phone;
         private $address;
 
-        function __construct($name , $address)
+        function __construct($name , $phone ,$address)
         {
             $this->name = $name;
             $this->address = $address;

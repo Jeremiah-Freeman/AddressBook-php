@@ -10,6 +10,7 @@
        <ul>
            {% for new_address_display in new_address_display %}
            <li>Name: {{ new_address_display.getName }}</li>
+           <li>Phone: {{ new_address_display.getPhone}}
            <li>Address: {{ new_address_display.getAddress }}</li>
            {% endfor %}
        </ul>
