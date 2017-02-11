@@ -1,0 +1,36 @@
+<html>
+<head>
+        <title>Address Book</title>
+</head>
+<body>
+        {% if logged_contact is not empty %}
+            <p>Here are all your tasks:</p>
+
+                {% for the_contacts in logged_contact %}
+                  <li>{{ the_contact.getName }}</li>
+                  <li>{{ the_contact.getPhone }}</li>
+                  <li>{{ the_contact.getAddress }}</li>
+                {% endfor %}
+{{ dump(the_contact) }}
+        {% endif %}
+
+        <div class="container">
+            <div class="form-group">
+                <form action="/hello" method="post">
+                    <h2>My Address Book</h2>
+                    <label for="name">Name:</label>
+                    <input id="name" type="text" name="name" class="form-control">
+                    <label for="phone">Phone Number:</label>
+                    <input id="phone" type="number" name="phone" class="form-control">
+                    <label for="address">Address:</label>
+                    <input id="address" class="form-control" type="text" name="address">
+                    <button type="submit" name="btn-success">Add Address</button>
+                </form>
+                <br>
+                <br>
+            </div>
+        </div>
+
+
+</body>
+</html>

@@ -7,7 +7,7 @@
 <body>
     <div class="container">
         <div class="form-group">
-            <form action="/create_new" method="post">
+            <form action="/hello" method="post">
                 <h2>My Address Book</h2>
                 <label for="name">Name:</label>
                 <input id="name"type="text" name="name" class="form-control">
@@ -19,23 +19,9 @@
             </form>
             <br>
             <br>
-
-                <h2>Your Addresses are:</h2>
-                <ul>
-
-                    <li>Name: {{ new_address_display.getName }}</li>
-                    <li>Phone: {{ new_address_display.getPhone}}</li>
-                    <li>Address: {{ new_address_display.getAddress }}</li>
-
-                </ul>
-
-            <form action="/">
-               <button type="submit" name="button">Ad Another</button>
-            </form>
-            <br>
-            <form action="/deleteAll" method="post">
-            <button type="submit" name="button">Delete All</button>
         </div>
     </div>
+
+
 </body>
 </html>

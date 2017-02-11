@@ -8,8 +8,8 @@
         function __construct($name , $phone ,$address)
         {
             $this->name = $name;
+            $this->phone = $phone;
             $this->address = $address;
-
         }
 
         // get functions
@@ -43,7 +43,7 @@
 
         function save()
         {
-            array_push($_SESSION['list_of_contacts'] , $this);
+            array_push($_SESSION['list_of_contacts'], $this);
         }
 
         static function getAll()

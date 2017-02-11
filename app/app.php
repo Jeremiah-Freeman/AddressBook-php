@@ -7,36 +7,33 @@
 
     session_start();
 
-    if(empty($_SESSION['list_of_contacts']))
-    {
+    if (empty($_SESSION['list_of_contacts'])) {
         $_SESSION['list_of_contacts'] = array();
     }
 
     $app = new Silex\Application();
 
-    $app->register(new Silex\Provider\TwigServiceProvider(), array("twig.path" => __DIR__."/../views"));
+    $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
 
     $app["debug"] = true;
 
 
-    $app->get("/" , function() use ($app)
-    {
-        return $app["twig"]->render("create_contact.html.twig" , array("create_address"=>Book::getAll()));
+    $app->get("/", function() use ($app) {
+        return $app['twig']->render('create_contact.html.twig' , array('logged_contact'=>Book::getAll()));
     });
 
-    $app->post("/create_new" , function() use ($app)
-    {
-        $new_created_address = new Book($_POST["name"] , $_POST["phone"] , $_POST["address"]);
-        $new_created_address -> save();
-        return $app["twig"]->render("create_contact.html.twig" , array("new_address_display" => $new_created_address));
-// dump($new_created_address);
+    $app->post("/hello" , function() use ($app) {
+        $new_created_address = new Book($_POST['name'] , $_POST['phone'] , $_POST['address']);
+        $new_created_address->save();
+        return $app['twig']->render('add_new_car.html.twig' , array('the_contact' => $new_created_address));
+        var_dump('the_contact');
     });
-
-    $app->post("/deleteAll" , function() use ($app)
-    {
-        Book::deleteAll();
-        return $app["twig"]->render("delete_contacts.html.twig" , array("create_address" => Book::getAll()));
-    });
+    //
+    // $app->post("/deleteAll" , function() use ($app)
+    // {
+    //     Book::deleteAll();
+    //     return $app["twig"]->render("delete_contacts.html.twig" , array("create_address" => Book::getAll()));
+    // });
 
 
 
