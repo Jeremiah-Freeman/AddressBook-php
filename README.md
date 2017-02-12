@@ -1,3 +1,5 @@
+![alt tag](http://orig09.deviantart.net/69f9/f/2011/305/2/6/address_book___owlicious_by_glitch452-d4equ0f.png)
+
 # Address Book
 
 #### User can create simple address book with multiple entries.
