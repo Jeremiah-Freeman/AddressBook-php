@@ -22,18 +22,18 @@
         return $app['twig']->render('create_contact.html.twig' , array('logged_contact'=>Book::getAll()));
     });
 
-    $app->post("/hello" , function() use ($app) {
+    $app->post("/add_Contact" , function() use ($app) {
         $new_created_address = new Book($_POST['name'] , $_POST['phone'] , $_POST['address']);
         $new_created_address->save();
-        return $app['twig']->render('add_new_car.html.twig' , array('the_contact' => $new_created_address));
-        var_dump('the_contact');
+        return $app['twig']->render('new_contact.html.twig' , array('the_contact' => $new_created_address));
+        // var_dump('the_contact');
     });
-    //
-    // $app->post("/deleteAll" , function() use ($app)
-    // {
-    //     Book::deleteAll();
-    //     return $app["twig"]->render("delete_contacts.html.twig" , array("create_address" => Book::getAll()));
-    // });
+
+    $app->post("/deleteAll" , function() use ($app)
+    {
+        Book::deleteAll();
+        return $app["twig"]->render("delete_contacts.html.twig" , array("create_address" => Book::getAll()));
+    });
 
 
 

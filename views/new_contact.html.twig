@@ -1,29 +1,35 @@
 <html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles.css">
-    <title>Address form</title>
+        <title>Address Book</title>
 </head>
 <body>
     <div class="container">
         <div class="form-group">
-            <form action="/add_Contact" method="post">
+
+                <p>Here are all your tasks:</p>
+                <ul>
+
+                        <li>{{ the_contact.getName }}</li>
+                        <li>{{ the_contact.getPhone }}</li>
+                        <li>{{ the_contact.getAddress }}</li>
+
+                </ul>
+                <form action='/deleteAll' method='post'>
+                    <button type='submit'>Clear</button>
+                </form>
+            <!-- <form action="/add_Contact" method="post">
                 <h2>My Address Book</h2>
                 <label for="name">Name:</label>
-                <input id="name"type="text" name="name" class="form-control">
+                <input id="name" type="text" name="name" class="form-control">
                 <label for="phone">Phone Number:</label>
                 <input id="phone" type="number" name="phone" class="form-control">
                 <label for="address">Address:</label>
                 <input id="address" class="form-control" type="text" name="address">
                 <button type="submit" name="btn-success">Add Address</button>
-            </form>
+            </form> -->
             <br>
             <br>
         </div>
-
-
     </div>
-
-
 </body>
 </html>
