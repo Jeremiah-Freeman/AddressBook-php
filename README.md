@@ -7,7 +7,7 @@
 #### By Jeremiah Freeman
 
 ## Description/Specs
-    User can order a pizza through the website and have the price displayed.
+    User can add new address contacts (name, phone, address) as well as remove all contacts created.
 
 
 
@@ -15,13 +15,13 @@
 |----------|-------|-------|
 | user enters a contacts name| Vajra Yogini | Vajra Yogini |
 | user enters a contacts phone | 5422949957 | 5422949957 |
-| user enters a contacts address | 4106 NE 133rd Ave, Portland, Oregon 97230 |
+| user enters a contacts address | 4106 NE 133rd Ave, Portland, Oregon 97230 | 4106 NE 133rd Ave, Portland, Oregon 97230 |
 
 
 ## Setup/Installation Requirements
 
 * Open web browser.
-* Clone this, "https://github.com/jaythinkshappiness/AddressBook-php/tree/gh-pages" repository.
+* Clone this, "https://github.com/jaythinkshappiness/AddressBook-php" repository.
 * Open Terminal.
 * If using Mac computer run this code in terminal if 'Composer' has not been previously installed.
     - cd ~
