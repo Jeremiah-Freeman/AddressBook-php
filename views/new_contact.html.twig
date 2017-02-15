@@ -1,34 +1,23 @@
 <html>
 <head>
-        <title>Address Book</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Address Book</title>
 </head>
 <body>
     <div class="container">
-        <div class="form-group">
-
-            <li>{{ the_contact.getName }}</li>
-            <li>{{ the_contact.getPhone }}</li>
-            <li>{{ the_contact.getAddress }}</li>
-            <br>
-            <form action='/'>
-                <button type='submit'>Add Another Contact</button>
-            </form><br>
-            <form action='/deleteAll' method='post'>
-                <button type='submit'>Clear</button>
-            </form>
-            <!-- <form action="/add_Contact" method="post">
-                <h2>My Address Book</h2>
-                <label for="name">Name:</label>
-                <input id="name" type="text" name="name" class="form-control">
-                <label for="phone">Phone Number:</label>
-                <input id="phone" type="number" name="phone" class="form-control">
-                <label for="address">Address:</label>
-                <input id="address" class="form-control" type="text" name="address">
-                <button type="submit" name="btn-success">Add Address</button>
-            </form> -->
-            <br>
-            <br>
-        </div>
+        <br>
+        <br>
+        <h3>You added a new Contact:</h3>
+        <li>{{ the_contact.getName }}</li>
+        <li>{{ the_contact.getPhone }}</li>
+        <li>{{ the_contact.getAddress }}</li>
+        <br>
+        <form action='/'>
+            <button type='submit' class="btn btn-success">Add Another Contact</button>
+        </form>
+        <br>
+        <br>
     </div>
 </body>
 </html>
