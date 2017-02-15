@@ -15,15 +15,28 @@
                 <input id="phone" type="number" name="phone" class="form-control">
                 <label for="address">Address:</label>
                 <input id="address" class="form-control" type="text" name="address">
-                <button type="submit" name="btn-success">Add Address</button>
+                <br>
+                <button type="submit" class="btn btn-success">Add Address</button>
             </form>
             <br>
-            <br>
+            {% if logged_contact is not empty %}
+                <h2><strong>Here are all your Contacts:</strong></h2><br>
+                <ul>
+                    {% for logged_contacts in logged_contact %}
+                        <li>Name:  {{ logged_contacts.getName }}</li>
+                        <li>Phone:  {{ logged_contacts.getPhone }}</li>
+                        <li>Address:  {{ logged_contacts.getAddress }}</li>
+                    {% endfor %}
+                </ul>
+                <br>
+                <form action='/deleteAll' method='post'>
+                    <button type='submit' class="btn btn-warning">Clear</button>
+                </form>
+            {% endif %}
+
+
+
         </div>
-
-
     </div>
-
-
 </body>
 </html>

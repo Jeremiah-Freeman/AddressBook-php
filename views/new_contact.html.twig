@@ -6,17 +6,16 @@
     <div class="container">
         <div class="form-group">
 
-                <p>Here are all your tasks:</p>
-                <ul>
-
-                        <li>{{ the_contact.getName }}</li>
-                        <li>{{ the_contact.getPhone }}</li>
-                        <li>{{ the_contact.getAddress }}</li>
-
-                </ul>
-                <form action='/deleteAll' method='post'>
-                    <button type='submit'>Clear</button>
-                </form>
+            <li>{{ the_contact.getName }}</li>
+            <li>{{ the_contact.getPhone }}</li>
+            <li>{{ the_contact.getAddress }}</li>
+            <br>
+            <form action='/'>
+                <button type='submit'>Add Another Contact</button>
+            </form><br>
+            <form action='/deleteAll' method='post'>
+                <button type='submit'>Clear</button>
+            </form>
             <!-- <form action="/add_Contact" method="post">
                 <h2>My Address Book</h2>
                 <label for="name">Name:</label>
